@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <p>You need JavaScript to run this application.</p>
+  </div>
+  <script type="module">
+    const games = ["Assassin's Creed", "Fortnite", "Minecraft"]
+    const cities = ["Glasgow", "Belfast", "Brighton"]
+
+    // theCurrentElement, theCurrentIndex, theWholeArray
+
+
+
+    function List({ items = [], isOrderedList = true }) {
+      if (items.length === 0) {
+        return React.createElement("p", null, "No data")
+      }
+      const listType = isOrderedList ? "ol" : "ul"
+      return React.createElement(listType,
+        null,
+        items.map((item) => React.createElement(
+          "li",
+          { key: item },
+          item)
+        )
+      )
+    }
+
+    const details = React.createElement("div",
+      null,
+      React.createElement("h1", null, "Cities"),
+      List({ items: cities, isOrderedList: false }),
+      React.createElement("hr"),
+      React.createElement("h1", null, "Games"),
+      List({})
+    )
+
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    root.render(details)
+  </script>
+</body>
+
+</html>

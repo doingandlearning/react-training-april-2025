@@ -17,7 +17,6 @@
 <body>
 
     <div id='root'></div>
-
     <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
 
@@ -55,8 +54,7 @@
         const films = [
             new Film('Airplane', 'Comedy', 'Classic plane spoof'),
             new Film('Skyfall', 'Adventure', 'Bond spy yarn'),
-            new Film('Love Actually', 'RomCom', ' Hugh Grant playing Hugh Grant'),
-            new Film('Mission Impossible', 'Adventure', ' Hi-octane stunt fest')
+            new Film('Love Actually', 'RomCom', ' Hugh Grant playing Hugh Grant')
         ]
 
         const bookList = React.createElement(
@@ -68,7 +66,7 @@
         const filmList = React.createElement(
             'ul',
             null,
-            films.map((f, i) => React.createElement("li", { key: f, title: f.toString() }, f.name))
+            films.map((f, i) => React.createElement("li", { key: i, title: f.toString() }, f.name))
         )
 
         const library = React.createElement('div', null,

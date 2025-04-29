@@ -1,106 +1,109 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <title>My Library</title>
     <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
 
-<div id='root'></div>
+    <div id='root'></div>
 
-<script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
 
-<script>
+    <script>
 
-    class Book {
-        constructor(title, author) {
-            this.title = title
-            this.author = author
+        class Book {
+            constructor(title, author) {
+                this.title = title
+                this.author = author
+            }
+
+            toString() {
+                return `${this.title}, by ${this.author}`
+            }
         }
 
-        toString() {
-            return `${this.title}, by ${this.author}`
+        class Film {
+            constructor(name, genre, blurb) {
+                this.name = name
+                this.genre = genre
+                this.blurb = blurb
+            }
+
+            toString() {
+                return `${this.name} [${this.genre}], ${this.blurb}`
+            }
         }
-    }
 
-    class Film {
-        constructor(name, genre, blurb) {
-            this.name = name
-            this.genre = genre
-            this.blurb = blurb
+        const books = [
+            new Book('Millennium', 'Stieg Larsson'),
+            new Book('A Christmas Carol', 'Charles Dickens'),
+            new Book('The Son', 'Jo Nesbo'),
+        ]
+
+        const films = [
+            new Film('Airplane', 'Comedy', 'Classic plane spoof'),
+            new Film('Skyfall', 'Adventure', 'Bond spy yarn'),
+            new Film('Love Actually', 'RomCom', ' Hugh Grant playing Hugh Grant'),
+            new Film('Mission Impossible', 'Adventure', ' Hi-octane stunt fest')
+        ]
+
+        function ItemsList(props) {
+            const elem = props.ordered ? "ol" : "ul";
+            return React.createElement(
+                elem,
+                null,
+                props.items.map((item, i) => React.createElement("li", { key: i }, item.toString()))
+            )
         }
 
-        toString() {
-            return `${this.name} [${this.genre}], ${this.blurb}`
+        function Table(props) {
+            return React.createElement("table", null,
+                React.createElement(TableHead, { sampleObject: props.items[0] }),
+                React.createElement(TableBody, { objects: props.items })
+            )
         }
-    }
 
-    const books = [
-        new Book('Millennium', 'Stieg Larsson'),
-        new Book('A Christmas Carol', 'Charles Dickens'),
-        new Book('The Son', 'Jo Nesbo'),
-    ]
+        function TableHead(props) {
+            return React.createElement("thead", null,
+                React.createElement(TableRow, { data: Object.keys(props.sampleObject), head: true })
+            )
+        }
 
-    const films = [
-        new Film('Airplane', 'Comedy', 'Classic plane spoof'),
-        new Film('Skyfall', 'Adventure', 'Bond spy yarn'),
-        new Film('Love Actually', 'RomCom', ' Hugh Grant playing Hugh Grant'),
-        new Film('Mission Impossible', 'Adventure', ' Hi-octane stunt fest')
-    ]
-    
-    function ItemsList(props) {
-        const elem = props.ordered ? "ol" : "ul";
-        return React.createElement(
-            elem, 
-            null,
-            props.items.map((item, i) => React.createElement("li", {key: i}, item.toString()))
+        function TableBody(props) {
+            return React.createElement("tbody", null,
+                props.objects.map((obj, i) => React.createElement(TableRow, { key: i, data: Object.values(obj), head: false }))
+            )
+        }
+
+        function TableRow(props) {
+            const elem = props.head ? "th" : "td";
+            return React.createElement("tr", null,
+                props.data.map((d, i) => React.createElement(elem, { key: i }, d))
+            )
+        }
+
+        const library = React.createElement('div', null,
+            React.createElement('h1', null, 'My Library'),
+            React.createElement('h2', null, 'Books list'),
+            ItemsList({ items: books, ordered: true }),
+            React.createElement('h2', null, 'Films list'),
+            ItemsList({ items: films }),
+            React.createElement('h2', null, 'Books table'),
+            Table({ items: books }),
+            React.createElement('h2', null, 'Films table'),
+            Table({ items: films }),
         )
-    }
 
-    function Table(props) {
-        return React.createElement("table", null,
-            React.createElement(TableHead, {sampleObject: props.items[0]}),
-            React.createElement(TableBody, {objects: props.items})
-        )
-    }
-    
-    function TableHead(props) {
-        return React.createElement("thead", null,
-            React.createElement(TableRow, {data: Object.keys(props.sampleObject), head: true})
-        )
-    }
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        root.render(library)
 
-    function TableBody(props) {
-        return React.createElement("tbody", null,
-            props.objects.map((obj, i) => React.createElement(TableRow, {key: i, data: Object.values(obj), head: false}))
-        )
-    }
-
-    function TableRow(props) {
-        const elem = props.head ? "th" : "td";
-        return React.createElement("tr", null,
-            props.data.map((d, i) => React.createElement(elem, {key: i}, d))
-        )
-    }
-
-    const library = React.createElement('div', null,
-        React.createElement('h1', null, 'My Library'),
-        React.createElement('h2', null, 'Books list'),
-        React.createElement(ItemsList, {items: books, ordered: true}, null),
-        React.createElement('h2', null, 'Films list'),
-        React.createElement(ItemsList, {items: films}, null),
-        React.createElement('h2', null, 'Books table'),
-        React.createElement(Table, {items: books}, null),
-        React.createElement('h2', null, 'Films table'),
-        React.createElement(Table, {items: films}, null),
-    )
-    
-    const root =  ReactDOM.createRoot(document.getElementById('root'))
-    root.render(library)
-
-</script>
+    </script>
 
 </body>
+
 </html>

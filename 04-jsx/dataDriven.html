@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <p>You need JavaScript to run this application.</p>
+  </div>
+  <script type="text/babel">
+    const games = ["Assassin's Creed", "Fortnite", "Minecraft"]
+    const cities = ["Glasgow", "Belfast", "Brighton"]
+
+    // theCurrentElement, theCurrentIndex, theWholeArray
+
+
+    function List({ items = [], isOrderedList = true, onClick }) {
+
+      if (items.length === 0) {
+        return <p>"No data"</p>
+      }
+      const ListType = isOrderedList ? "ol" : "ul"
+      return <ListType onClick={onClick}>
+        {items.map((item) => <li key={item}>
+          {item}</li>
+        )}
+      </ListType>
+    }
+
+    function welcome() {
+
+      console.log("hello")
+    }
+
+    const isShown = false
+
+    const details = <React.Fragment>
+      <h1 className="title" onMouseEnter={welcome}>Library</h1>
+      {isShown && <h2>Cities</h2>}
+      {isShown ? <h2>Hidden Title</h2> : <h2>Cities</h2>}
+
+      <List items={cities} isOrderedList={true} onClick={welcome} />
+      <hr />
+      <h2>Games</h2>
+      <List items={games} />
+    </React.Fragment >
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    root.render(details)
+  </script>
+</body>
+
+</html>

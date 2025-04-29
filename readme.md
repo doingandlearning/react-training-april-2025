@@ -3,7 +3,7 @@
 ## Tuesday 29th April - Thursday 1st May
 
 - Kevin Cunningham (https://kevincunningham.co.uk)
-- Miro Board -
+- Miro Board - https://miro.com/app/board/uXjVI8_tRVI=/
 - Feedback -
 
 # Pre-course

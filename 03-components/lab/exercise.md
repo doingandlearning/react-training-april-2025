@@ -3,8 +3,6 @@
 ## Overview
 In this lab, you'll refactor the "library" web page from the previous lab, so that it uses components to render portions of the web page.
 
-You can either choose to implement your components as class-based components or as functional components. We provide solutions for both techniques.
-
 
 ## Roadmap
 Here's a brief summary of the exercises in this lab. More detailed instructions follow later in this lab document:
@@ -17,7 +15,6 @@ Here's a brief summary of the exercises in this lab. More detailed instructions 
 
 ### Exercise 1: Familiarization with the solution web pages
 Open either of the following web pages in a browser:
-- `solution/ClassComponents.html`
 - `solution/FunctionalComponents.html`
 
 These two web pages are semantically equivalent; one defines class-based components, and the other defines functional components. Both have the same appearance.

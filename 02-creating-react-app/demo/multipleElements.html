@@ -14,14 +14,20 @@
     <p>You need JavaScript to run this application.</p>
   </div>
   <script type="module">
-    const msg = React.createElement(
-      "h1",
-      { id: "my-msg", title: "This is my message" },
-      "Hello, React!"
+    const ul = React.createElement(
+      "ul",
+      null,
+      React.createElement("li", null, "Murray"),
+      React.createElement("li", null, "Rory"),
+      React.createElement("li", null, "Caitlin"),
+      React.createElement("li", null, "Callum"),
+      React.createElement("li", null, "Bhushan"),
+      React.createElement("li", null, "Max"),
+      React.createElement("li", null, "Kieren"),
     )
-    console.log(msg)
+    console.log(ul)
     const root = ReactDOM.createRoot(document.getElementById('root'))
-    root.render(msg)
+    root.render(ul)
   </script>
 </body>
 

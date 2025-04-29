@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <p>You need JavaScript to run this application.</p>
+  </div>
+  <script type="module">
+    const games = ["Assassin's Creed", "Fortnite", "Minecraft"]
+    const cities = ["Glasgow", "Belfast", "Brighton"]
+
+    // theCurrentElement, theCurrentIndex, theWholeArray
+    const gamesList = games.map(
+      (game, index) => React.createElement("li",
+        { key: game }, game)
+    )
+    const citiesList = cities.map(
+      (city, index) => React.createElement("li",
+        { key: city }, city)
+    )
+
+    const details = React.createElement("div",
+      null,
+      React.createElement("ul", null, gamesList),
+      React.createElement("hr"),
+      React.createElement("ul", null, citiesList)
+    )
+
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    root.render(details)
+  </script>
+</body>
+
+</html>

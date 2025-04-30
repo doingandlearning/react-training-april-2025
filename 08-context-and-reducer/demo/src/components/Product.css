@@ -1,0 +1,63 @@
+/* Light Theme Styles */
+.light-theme .product {
+  background-color: #fff;
+  color: #333;
+}
+
+.light-theme .product-remove-button {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Dark Theme Styles */
+.dark-theme .product {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-theme .product-remove-button {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+/* Shared Styles */
+.product {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.product-info {
+  flex-grow: 1;
+}
+
+.product-name {
+  margin: 0;
+}
+
+.product-price {
+  font-style: italic;
+}
+
+.product-remove-button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-remove-button:hover {
+  opacity: 0.9;
+}

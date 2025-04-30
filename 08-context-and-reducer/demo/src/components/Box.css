@@ -1,0 +1,14 @@
+.box { 
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.light-box {
+  background-color: antiquewhite;
+}
+
+.dark-box {
+  background-color: #1e3a51
+}
+

@@ -1,0 +1,32 @@
+.task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.status-box {
+  padding: 1rem 2rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.status-not-started {
+  background-color: #f2f2f2;
+}
+
+.status-in-progress {
+  background-color: #fff3cd;
+}
+
+.status-complete {
+  background-color: #d4edda;
+}
+
+.status-archived {
+  background-color: #e2e3e5;
+  color: #6c757d;
+}

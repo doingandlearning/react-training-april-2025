@@ -1,6 +1,6 @@
 import { useAuth } from "../context/AuthContext";
 
 export default function LogoutButton() {
-  const { dispatch } = useAuth();
-  return <button onClick={() => dispatch({ type: "LOGOUT" })}>Log Out</button>;
+  const { logoutUser } = useAuth();
+  return <button onClick={logoutUser}>Log Out</button>;
 }

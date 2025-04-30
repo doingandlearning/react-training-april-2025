@@ -6,7 +6,7 @@ export interface IThemeContext {
   toggleTheme: () => void;
 }
 
-export const ThemeContext = createContext<IThemeContext>(null)
+export const ThemeContext = createContext<IThemeContext | null>(null)
 ThemeContext.displayName = "ThemeProvider"
 
 interface IThemeProvider {

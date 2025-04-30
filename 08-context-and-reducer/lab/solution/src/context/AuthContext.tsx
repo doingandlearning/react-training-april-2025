@@ -24,8 +24,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   return <AuthContext.Provider value={{ state, dispatch }}>{children}</AuthContext.Provider>;
 }
 
+// export function useAuth() {
+//   const context = useContext(AuthContext);
+//   if (!context) throw new Error("useAuth must be used inside AuthProvider");
+//   return context;
+// }
+
+
 export function useAuth() {
   const context = useContext(AuthContext);
   if (!context) throw new Error("useAuth must be used inside AuthProvider");
-  return context;
+  const { state, dispatch } = context
+
+
+  function loginUser(user: string) {
+    dispatch({ type: "LOGIN", user })
+  }
+
+  function logoutUser() {
+    dispatch({ type: "LOGOUT" })
+  }
+
+  return { state, loginUser, logoutUser }
 }

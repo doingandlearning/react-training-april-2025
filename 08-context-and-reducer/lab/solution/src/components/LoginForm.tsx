@@ -1,9 +1,9 @@
 import { useAuth } from "../context/AuthContext"
 
 export default function LoginForm() {
-  const { dispatch } = useAuth();
+  const { loginUser } = useAuth();
   return (
-    <button onClick={() => dispatch({ type: "LOGIN", user: "Alice" })}>
+    <button onClick={() => loginUser("Alice")}>
       Log In
     </button>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "../../$node_modules/@types/react/index.js"
 
 interface APIResponseShape {
   name: string

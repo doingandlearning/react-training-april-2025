@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TodoList Component > toggle todo item completion on click 1`] = `
+<li
+  style="text-decoration: line-through;"
+>
+  New todo
+</li>
+`;

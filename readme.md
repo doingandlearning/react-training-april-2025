@@ -2,7 +2,7 @@
 
 ## Tuesday 29th April - Thursday 1st May
 
-- Kevin Cunningham (https://kevincunningham.co.uk)
+- Kevin Cunningham (https://kevincunningham.co.uk) (kevin@kevincunningham.co.uk)
 - Miro Board - https://miro.com/app/board/uXjVI8_tRVI=/
 - Feedback -
 

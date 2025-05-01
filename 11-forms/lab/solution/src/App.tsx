@@ -23,11 +23,7 @@ export default function App() {
   return (
     <>
       <h1>My Library</h1>
-      <button onClick={toggleView}>
-        {tabularFormat ? "Show as List" : "Show as Table"}
-      </button>
-      <button onClick={() => addBook(new Book(faker.commerce.productName(), faker.person.fullName()))}>Add Book</button>
-      <button onClick={() => addFilm(new Film(faker.music.songName(), faker.music.genre(), faker.commerce.productDescription()))}>Add Film</button>
+
       <nav>
         <NavLink to="/books">Book page</NavLink>
         <NavLink to="/films">Film page</NavLink>
@@ -36,10 +32,16 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/books" element={<BookPage tabularFormat={tabularFormat} />}></Route>
-
         <Route path="/films" element={<FilmPage tabularFormat={tabularFormat} />}></Route>
-
       </Routes>
+      <div className="button-group">
+
+        <button onClick={toggleView}>
+          {tabularFormat ? "Show as List" : "Show as Table"}
+        </button>
+        <button onClick={() => addBook(new Book(faker.commerce.productName(), faker.person.fullName()))}>Add Book</button>
+        <button onClick={() => addFilm(new Film(faker.music.songName(), faker.music.genre(), faker.commerce.productDescription()))}>Add Film</button>
+      </div>
       <LikePanel />
     </>
   );

@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import { useLibrary } from '../hooks/useLibrary';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../librarySlice';
 import Book from '../book';
 
 function BookForm() {
 	const [title, setTitle] = useState('');
 	const [author, setAuthor] = useState('');
-	const { addBook } = useLibrary();
+	const dispatch = useDispatch();
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 
 		const newBook = new Book(title, author);
-		addBook(newBook)
+		dispatch(addBook(newBook));
 		// Reset form fields
 		setTitle('');
 		setAuthor('');
@@ -27,8 +28,6 @@ function BookForm() {
 					value={title}
 					onChange={(e) => setTitle(e.target.value)}
 					required
-					maxLength={10}
-
 				/>
 			</div>
 			<div>

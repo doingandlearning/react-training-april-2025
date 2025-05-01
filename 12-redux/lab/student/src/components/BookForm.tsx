@@ -27,8 +27,6 @@ function BookForm() {
 					value={title}
 					onChange={(e) => setTitle(e.target.value)}
 					required
-					maxLength={10}
-
 				/>
 			</div>
 			<div>

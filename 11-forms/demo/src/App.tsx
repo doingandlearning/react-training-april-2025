@@ -1,13 +1,20 @@
 import { useState } from 'react'
 import './App.css'
 
+type IError = {
+  name: string,
+  food: string,
+  lang: string
+}
+
+
 function App() {
   const [name, setName] = useState("")
   const [food, setFood] = useState("")
   const [lang, setLang] = useState("")
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState<Partial<IError>>({})
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault() // To stop the page refresh!
     setErrors({})
     console.log(e.target)

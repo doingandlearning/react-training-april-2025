@@ -1,0 +1,224 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+table {
+  border: 1px solid steelblue;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid steelblue;
+  padding: 5pt 10pt;
+  text-align: left;
+}
+
+thead {
+  color: rgb(0, 0, 0);
+  background-color: steelblue;
+}
+
+th {
+  text-transform: capitalize;
+}
+
+.likePanel button {
+  margin-left: 1em;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #fdfdfd;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Navigation Links */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+nav a {
+  color: #6366f1; /* Indigo-500 */
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #6366f1;
+  transition: width 0.2s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #4338ca; /* Indigo-700 */
+}
+
+
+/* Button Group */
+.button-group button {
+  margin-top: 12px;
+  background: #3b82f6; /* blue-500 */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.button-group button:hover {
+  background: #2563eb; /* blue-600 */
+}
+
+/* List Item Styling */
+.items-list li {
+  background: #f9fafb;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Remove Button */
+.items-list button {
+  background: #ef4444; /* red-500 */
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 0.375rem;
+  color: white;
+  cursor: pointer;
+}
+
+.items-list button:hover {
+  background: #dc2626; /* red-600 */
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+}
+
+th {
+  background: #f3f4f6;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+tr:hover {
+  background: #f1f5f9;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: #f9fafb;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background: #44bcef;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #26d3dc;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.button-group button {
+  background: #3b82f6; /* blue-500 */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.375rem; /* rounded-md */
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.button-group button:hover {
+  background: #2563eb; /* blue-600 */
+}
+
+.button-group button:active {
+  background: #1d4ed8; /* blue-700 */
+}
+

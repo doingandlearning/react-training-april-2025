@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "description": "Gaming PC with RTX 3080",
+      "price": 2500.99,
+      "likes": 0,
+      "mostRecentLike": null
+    },
+    {
+      "id": 2,
+      "description": "Mechanical Keyboard with Custom Keycaps",
+      "price": 150.99,
+      "likes": 0,
+      "mostRecentLike": null
+    },
+    {
+      "id": 3,
+      "description": "High-Resolution Resin 3D Printer",
+      "price": 500.0,
+      "likes": 0,
+      "mostRecentLike": null
+    },
+    {
+      "id": 4,
+      "description": "Apple Vision",
+      "price": 3500.0,
+      "likes": 0,
+      "mostRecentLike": null
+    },
+    {
+      "id": 5,
+      "description": "The Witcher 3: Wild Hunt Game",
+      "price": 29.99,
+      "likes": 0,
+      "mostRecentLike": null
+    }
+  ],
+  "sort": "SORTED_BY_DESCRIPTION"
+}
